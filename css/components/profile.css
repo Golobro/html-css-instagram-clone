@@ -1,0 +1,145 @@
+:root{
+    --dimen: 150px;
+    --dimenResponsive: 70px;
+}
+
+/* ====== PROFILE WRAP ====== */
+.profile-wrap{
+    display: flex;
+    margin: 10px auto;
+    padding: 1rem 4rem;
+    max-width: var(--maxWidth);
+}
+
+/* === Profile Avatar === */
+.profile-avatar{
+    margin-right: 100px;    
+}
+
+.profile-avatar img{
+    border-radius: 50%;
+    position: relative;
+    width: var(--dimen);
+    height: var(--dimen);
+    border: 1px solid #ccc;
+}
+
+.circ-story{
+    position: absolute;
+    border-radius: 50%;
+    width: var(--dimen);
+    height: var(--dimen);
+    transform: scale(1.12);
+    background-origin: border-box;
+    border: double 3px transparent;
+    background-clip: content-box, border-box;
+    background-image: 
+        linear-gradient(#fafafa, #fafafa), 
+        radial-gradient(farthest-corner at top right, #c42d90 50%,#f8964c 80%)
+    ;
+}
+
+/* === Profile Info === */
+.profile-info .profile-title{
+    display: flex;
+    align-items: center;
+}
+
+.profile-title h2{
+    font-size: 28px;
+    font-weight: 300;
+    margin-right: 20px;
+}
+
+.profile-title button{
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    background: var(--accent);
+}
+
+.profile-numbers{
+    display: flex;
+    align-items: center;
+}
+
+.profile-numbers li a span{
+    font-weight: 600;
+}
+
+.profile-numbers li a{
+    color: #262626;
+}
+
+.profile-numbers li {
+    margin-right: 40px;
+}
+
+.profile-numbers.responsive-profile{
+    display: none;
+}
+
+/* === Profile Bio === */
+.profile-bio .profile-name{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.profile-bio .profile-link{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--links);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 700px){
+    .profile-wrap{
+        padding: 1rem;
+        margin-bottom: -10px !important;
+    }
+    .profile-avatar{
+        margin-right: 26px;
+    }
+    .profile-avatar img, .circ-story{
+        width: var(--dimenResponsive);
+        height: var(--dimenResponsive);
+    }
+    .circ-story{
+        transform: scale(1.18);
+    }
+    .profile-info .profile-title{
+        display: block;
+    }
+    .profile-title h2{
+        margin-right: 0;
+    }
+    .profile-bio{
+        margin-left: -100px;
+    }
+    .profile-numbers{
+        display: none;
+    }
+    .responsive-profile{
+        padding: 10px;
+    }
+    .profile-numbers.responsive-profile{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid #dbdbdb;
+    }
+    .profile-numbers.responsive-profile li {
+        margin-right: 0;
+    }
+    .profile-numbers.responsive-profile li a{
+        font-size: 14px;
+        color: #8e8e8e;
+    }
+    .profile-numbers.responsive-profile li span{
+        display: block;
+        text-align: center;
+        color: var(--text-color);
+    }
+}

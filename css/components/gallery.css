@@ -1,0 +1,79 @@
+.gallery-pics .pic-wrap{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pic{
+    height: 290px;
+    cursor: pointer;
+    position: relative;
+    background: #cccccc;
+}
+
+.pic img{
+    height: 100%;
+    vertical-align: middle;
+}
+
+.pic:hover img{
+    opacity: 0.6;
+}
+
+.pic:hover .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opacity-overlay{
+    height: 100%;
+    background: #000000;
+}
+
+.pic .icons{
+    top: 50%;
+    left: 50%;
+    display: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.pic .icons i.fa-comment{
+    margin-left: 2rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px){
+    .gallery-pics .pic-wrap{
+        grid-gap: 2px;
+    }
+    .pic{
+        width: 100%;
+        height: 200px;
+    }
+    .pic .icons{
+        font-size: 1rem;
+        flex-direction: column;
+    }
+    .pic .icons i.fa-comment{
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 500px){
+    .pic{
+        width: 100%;
+        height: 160px;
+    }
+}
+
+@media (max-width: 400px){
+    .pic{
+        width: 100%;
+        height: 100px;
+    }
+}
